@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <div>
-      <div style="margin: 1rem 0;">
+      <div style="margin: 0.5rem 0">
         <PiniaLogo />
       </div>
 
@@ -16,10 +16,7 @@
         <ul data-testid="items">
           <li v-for="item in cart.items" :key="item.name">
             {{ item.name }} ({{ item.amount }})
-            <button
-              @click="cart.removeItem(item.name)"
-              type="button"
-            >X</button>
+            <button @click="cart.removeItem(item.name)" type="button">X</button>
           </li>
         </ul>
 
@@ -29,13 +26,49 @@
           @click="clearCart"
           type="button"
           data-testid="clear"
-        >Clear the cart</button>
+        >
+          Clear the cart
+        </button>
       </form>
     </div>
   </Layout>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
+import Layout from "./layout/default.vue"
+import PiniaLogo from "./components/PiniaLogo.vue"
+
+import {ref} from "vue"
+import {useUserStore} from "./store/user"
+import {useCartStore} from "./store/cart"
+
+const user = useUserStore()
+const cart = useCartStore()
+
+const itemName = ref("")
+
+const addItemToCart = () => {
+  if (!itemName.value) return
+  cart.addItem(itemName.value)
+  itemName.value = ""
+}
+
+const clearCart = () => {
+  if (window.confirm("Are you sure you want to clear the cart?")) {
+    cart.rawItems = []
+  }
+}
+
+const buy = async () => {
+  const n = await cart.purchaseItems()
+
+  console.log(`Bought ${n} items`)
+
+  cart.rawItems = []
+}
+</script>
+
+<!-- <script lang="ts">
 import Layout from './layout/default.vue'
 import PiniaLogo from './components/PiniaLogo.vue'
 
@@ -86,7 +119,7 @@ export default defineComponent({
     }
   },
 })
-</script>
+</script> -->
 
 <style scoped>
 img {
