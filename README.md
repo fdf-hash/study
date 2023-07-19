@@ -1,4 +1,4 @@
-# Vue 3 + TypeScript + Vite
+# 项目使用 Vue 3 + TypeScript + Vite 开发
 
 ##  [Vue 3](https://cn.vuejs.org/guide/introduction.html) + [TypeScript](https://www.typescriptlang.org/zh/docs/handbook/typescript-in-5-minutes.html) + [Vite](https://cn.vitejs.dev/guide/)
 
@@ -23,3 +23,30 @@
    - 灵活的插件系统：添加自定义功能和优化变得更加容易。
 
    - 更好的开发体验：由于 Vite 的快速热更新和按需导入功能，开发体验更加流畅和舒适。开发者可以更快地看到修改后的效果，并且无需等待整个应用重新构建。
+
+
+## 项目运行
+
+   - 项目基于[pnpm](https://pnpm.io/zh/next/installation)启动
+
+## node、pnpm、vue/cli、基本配置
+```js
+   E:\projects\my-vue-app> node -v  
+   v16.16.0
+
+   E:\projects\my-vue-app> pnpm -v
+   8.6.0
+
+   E:\projects\my-vue-app> vue --version
+   @vue/cli 5.0.8 
+
+   E:\projects\my-vue-app> tsc -v
+   Version 5.1.6
+```
+   - 以上配置符合,即可
+
+``` ts
+   下载依赖：pnpm i
+
+   运行：pnpm dev || pnpm run dev || vscode自带npm脚本一键启动
+```
