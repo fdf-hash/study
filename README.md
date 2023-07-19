@@ -1,6 +1,6 @@
-# 项目使用 Vue 3 + TypeScript + Vite 开发
+# 项目使用 Vue 3 + TypeScript + Vite + Vue DevUI 开发
 
-##  [Vue 3](https://cn.vuejs.org/guide/introduction.html) + [TypeScript](https://www.typescriptlang.org/zh/docs/handbook/typescript-in-5-minutes.html) + [Vite](https://cn.vitejs.dev/guide/)
+##  [Vue 3](https://cn.vuejs.org/guide/introduction.html) + [TypeScript](https://www.typescriptlang.org/zh/docs/handbook/typescript-in-5-minutes.html) + [Vite](https://cn.vitejs.dev/guide/) + [Vue DevUI](https://vue-devui.github.io/quick-start/)
 
 #### Vue 是一款用于构建用户界面的 JavaScript 框架。它基于标准 HTML、CSS 和 JavaScript 构建，并提供了一套声明式的、组件化的编程模型，帮助你高效地开发用户界面。无论是简单还是复杂的界面，Vue 都可以胜任。
 
@@ -24,6 +24,9 @@
 
    - 更好的开发体验：由于 Vite 的快速热更新和按需导入功能，开发体验更加流畅和舒适。开发者可以更快地看到修改后的效果，并且无需等待整个应用重新构建。
 
+#### Vue DevUI[介绍](https://devui.design/design-cn/principle#DesignValue)
+
+   - 华为软件开发云DevUI前端团队
 
 ## 项目运行
 

@@ -3,6 +3,9 @@
     <div style="margin: 0.5rem 0">
       <PiniaLogo />
     </div>
+    <d-button variant="solid" color="primary">确定</d-button>
+    <d-button variant="text" color="primary">Text</d-button>
+
   </layout>
 </template>
 
