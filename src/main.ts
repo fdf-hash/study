@@ -1,5 +1,14 @@
 import { createPinia } from 'pinia'
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp,h } from 'vue'
+import { RouterView } from 'vue-router'
+import router from 'router'
 
-createApp(App).use(createPinia()).mount('#app')
+// 创建app
+const app = createApp({
+    render: () => h(RouterView),
+    inheritAttrs: false
+  })
+
+app.use(createPinia())
+app.use(router)
+app.mount('#app')

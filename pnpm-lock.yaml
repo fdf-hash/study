@@ -11,6 +11,9 @@ dependencies:
   vue:
     specifier: ^3.2.47
     version: registry.npmmirror.com/vue@3.3.4
+  vue-router:
+    specifier: ^4.2.4
+    version: registry.npmmirror.com/vue-router@4.2.4(vue@3.3.4)
 
 devDependencies:
   '@vitejs/plugin-vue':
@@ -1210,6 +1213,18 @@ packages:
       '@vue/composition-api':
         optional: true
     dependencies:
+      vue: registry.npmmirror.com/vue@3.3.4
+    dev: false
+
+  registry.npmmirror.com/vue-router@4.2.4(vue@3.3.4):
+    resolution: {integrity: sha512-9PISkmaCO02OzPVOMq2w82ilty6+xJmQrarYZDkjZBfl4RvYAlt4PKnEX21oW4KTtWfa9OuO/b3qk1Od3AEdCQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/vue-router/-/vue-router-4.2.4.tgz}
+    id: registry.npmmirror.com/vue-router/4.2.4
+    name: vue-router
+    version: 4.2.4
+    peerDependencies:
+      vue: ^3.2.0
+    dependencies:
+      '@vue/devtools-api': registry.npmmirror.com/@vue/devtools-api@6.5.0
       vue: registry.npmmirror.com/vue@3.3.4
     dev: false
 
