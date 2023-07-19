@@ -24,7 +24,7 @@
 
    - 更好的开发体验：由于 Vite 的快速热更新和按需导入功能，开发体验更加流畅和舒适。开发者可以更快地看到修改后的效果，并且无需等待整个应用重新构建。
 
-#### Vue DevUI[介绍](https://devui.design/design-cn/principle#DesignValue)
+#### Vue DevUI[介绍](https://devui.design/design-cn/start)
 
    - 华为软件开发云DevUI前端团队
 
