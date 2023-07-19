@@ -1,0 +1,1 @@
+export { default as PiniaLogo } from './PiniaLogo.vue'

@@ -11,7 +11,11 @@
     "pinia": "^2.0.34",
     "vue": "^3.2.47",
     "vue-router": "^4.2.4",
-    "router": "workspace:*"
+    "router": "workspace:*",
+    "store": "workspace:*",
+    "pages": "workspace:*",
+    "components":"workspace:*"
+
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.2.3",

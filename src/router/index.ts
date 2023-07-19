@@ -4,11 +4,12 @@ import {
     type RouteRecordRaw
 } from 'vue-router'
 
+import { HOME } from 'pages'
 
 const routes: RouteRecordRaw[] = [
     {
         path: '/',
-        component: () => import('../view/home/main.vue'),
+        component: HOME,
         meta: { title: '首页' }
     },
 ]

@@ -1,7 +1,7 @@
 {
-    "name": "router",
+    "name": "components",
     "version": "1.0.0",
-    "description": "应用的路由",
+    "description": "项目组件",
     "main": "index.ts",
     "license": "ISC"
 }
