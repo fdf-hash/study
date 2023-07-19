@@ -1,1 +1,1 @@
-export { default as PiniaLogo } from './PiniaLogo.vue'
+export { default as PiniaLogo } from './logo/PiniaLogo.vue'

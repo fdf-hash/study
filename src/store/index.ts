@@ -1,3 +1,3 @@
-export { useCartStore } from './cart'
+export { useCartStore } from './user/cart'
 
-export { useUserStore } from './user'
+export { useUserStore } from './user/user'
