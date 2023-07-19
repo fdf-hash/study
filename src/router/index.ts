@@ -3,6 +3,7 @@ import {
     createWebHistory,
     type RouteRecordRaw
 } from 'vue-router'
+import guard from './guard'
 
 import { HOME } from 'pages'
 
@@ -18,5 +19,9 @@ const router = createRouter({
     history: createWebHistory('/'),
     routes
 })
+
+guard(router)
+
+
 
 export default router

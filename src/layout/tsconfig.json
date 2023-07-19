@@ -2,17 +2,11 @@
   "extends": "ts-conf-base/tsconfig.vue.json",
   "compilerOptions": {
     "composite": true,
-    "baseUrl": ".",
-    "rootDir": "../",
     "types": [
       "vite/client"
     ]
   },
   "include": [
     ".",
-    "./**/*.ts",
-    "./**/*.d.ts",
-    "./**/*.tsx",
-    "./**/*.vue" 
   ]
 }
