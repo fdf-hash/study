@@ -3,22 +3,24 @@
     <div class="layout-nav-content">
       <d-menu
         mode="vertical"
+        v-for="item in userApps"
         router
-        v-for="(item, index) in userApps"
-        :key="index"
-        :default-select-keys="selectKeys"
       >
         <d-sub-menu
           :title="item.meta?.title"
           v-if="item.children && item.children.length"
+          :key="item.path"
         >
           <template #icon>
+            {{ item.path }}
             <i class="icon-system"></i>
           </template>
           <d-menu-item
             v-for="children in item.children"
             :key="`${item.path}/${children.path}`"
           >
+            <span>{{ `${item.path}/${children.path}` }}</span>
+            <br />
             <span>{{ children.meta?.title }}</span>
           </d-menu-item>
         </d-sub-menu>
@@ -50,21 +52,13 @@
 </template>
 
 <script setup lang="ts">
-import {ref} from "vue"
 import {useRouter} from "vue-router"
 
 const user = useRouter()
 
-let selectKeys: any = ref([])
-
-selectKeys.value = user.options.routes.map((item) => {
-  return item.meta?.path
-})
-console.log(selectKeys.value)
-
 const userApps = user.options.routes
 
-console.log(userApps)
+console.log(userApps, "---")
 </script>
 
 <style lang="scss" scoped>
