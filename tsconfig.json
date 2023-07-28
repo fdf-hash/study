@@ -31,6 +31,7 @@
   ],
   "references": [
     {"path": "./tsconfig.node.json"},
-    {"path": "./src/router/tsconfig.json"}
+    {"path": "./src/router/tsconfig.json"},
+    {"path": "./src/pages/view/tsconfig.json"}
   ],
 }

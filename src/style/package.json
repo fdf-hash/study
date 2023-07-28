@@ -1,0 +1,8 @@
+{
+    "name": "styles",
+    "version": "1.0.0",
+    "description": "全局样式",
+    "main": "index.scss",
+    "license": "ISC"
+  }
+  

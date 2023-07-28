@@ -3,6 +3,7 @@ import { createApp, h } from 'vue'
 import { RouterView } from 'vue-router'
 import router from 'router'
 import DevUI from 'vue-devui';
+import 'styles/index.scss'
 import 'vue-devui/style.css';
 import '@devui-design/icons/icomoon/devui-icon.css';
 // import {

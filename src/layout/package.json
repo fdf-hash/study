@@ -1,6 +1,6 @@
 {
-    "name": "pages",
+    "name": "layout",
     "version": "1.0.0",
-    "description": "路由相关页面",
+    "description": "页面",
     "main": "index.ts"
 }

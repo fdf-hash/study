@@ -17,9 +17,12 @@ importers:
       devui-theme:
         specifier: ^0.0.4
         version: registry.npmmirror.com/devui-theme@0.0.4
-      pages:
+      layout:
         specifier: workspace:*
         version: link:src/layout
+      pages:
+        specifier: workspace:*
+        version: link:src/pages/view
       pinia:
         specifier: ^2.1.4
         version: registry.npmmirror.com/pinia@2.1.4(typescript@4.9.5)(vue@3.3.4)
@@ -29,6 +32,9 @@ importers:
       store:
         specifier: workspace:*
         version: link:src/store
+      styles:
+        specifier: workspace:*
+        version: link:src/style
       vue:
         specifier: ^3.3.4
         version: registry.npmmirror.com/vue@3.3.4
@@ -68,9 +74,13 @@ importers:
 
   src/layout: {}
 
+  src/pages/view: {}
+
   src/router: {}
 
   src/store: {}
+
+  src/style: {}
 
 packages:
 

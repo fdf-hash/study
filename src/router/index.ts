@@ -4,8 +4,8 @@ import {
     type RouteRecordRaw
 } from 'vue-router'
 import guard from './guard'
-
-import { HOME } from 'pages'
+import appRoutes from './app-routes'
+import { HOME } from 'layout'
 
 const routes: RouteRecordRaw[] = [
     {
@@ -13,6 +13,7 @@ const routes: RouteRecordRaw[] = [
         component: HOME,
         meta: { title: '首页' }
     },
+    ...appRoutes
 ]
 
 const router = createRouter({

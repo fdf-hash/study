@@ -1,0 +1,8 @@
+{
+    "name": "pages",
+    "version": "1.0.0",
+    "description": "页面",
+    "main": "index.ts",
+    "license": "ISC"
+  }
+  
