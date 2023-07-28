@@ -1,20 +1,17 @@
 <template>
   <div class="layout-main">
     <LayoutNav></LayoutNav>
-    <LayoutRouter></LayoutRouter>
+    <LayoutContent></LayoutContent>
   </div>
 </template>
 
 <script setup lang="ts">
+import LayoutContent from "./layout-content.vue";
 import LayoutNav from "./layout-nav.vue"
-import LayoutRouter from "./layout-router.vue";
 </script>
 
 <style lang="scss" scoped>
 .layout-main {
-  height: calc(100vh - 50px);
-  overflow: auto;
-  background: rgb(234, 235, 237);
   display: flex;
 }
 </style>
