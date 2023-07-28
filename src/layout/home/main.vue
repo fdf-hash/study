@@ -1,18 +1,24 @@
 <template>
-  <div>登录</div>
+  <div class="btn">
+    <d-button variant="solid" @click="path" size="lg">登录</d-button>
+  </div>
 </template>
 
 <script setup lang="ts">
+import {useRouter} from "vue-router"
+
+const routers = useRouter()
+
+const path = () => {
+  routers.push({path: "/web/index"})
+}
 </script>
 
-<style scoped>
-img {
-  width: 200px;
-}
-
-button,
-input {
-  margin-right: 0.5rem;
-  margin-bottom: 0.5rem;
+<style scoped lang="scss">
+.btn {
+  height: calc(100vh);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 </style>
