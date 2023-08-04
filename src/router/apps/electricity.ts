@@ -1,7 +1,7 @@
 import type { RouteRecordRaw } from 'vue-router'
 import { layout } from 'layout'
 
-const plan: RouteRecordRaw[] = [
+const electricity: RouteRecordRaw[] = [
     {
         path: '/electricity',
         meta: { title: '电费' },
@@ -21,4 +21,4 @@ const plan: RouteRecordRaw[] = [
     }
 ]
 
-export default plan
+export default electricity

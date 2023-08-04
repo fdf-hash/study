@@ -1,71 +1,45 @@
 <template>
   <div class="layout-nav">
     <div class="layout-nav-content">
-      <!-- <d-menu
-        mode="vertical"
-        v-for="item in userApps"
-        router
-        :open-keys="['/web']"
-      >
-        <d-sub-menu
-          :title="item.meta?.title"
-          v-if="item.children && item.children.length"
-          :key="item.path"
-        >
-          <template #icon>
-            {{ item.path }}
-            <i class="icon-system"></i>
-          </template>
-          <d-menu-item
-            v-for="children in item.children"
-            :key="`${item.path}/${children.path}`"
-          >
-            <span>{{ `${item.path}/${children.path}` }}</span>
-            <br />
-            <span>{{ children.meta?.title }}</span>
-          </d-menu-item>
-        </d-sub-menu>
-
-        <d-menu-item
-          :title="item.meta?.title"
-          v-else
-        >
+      <d-menu mode="vertical" router v-for="(item,index) in userApps" :key="index">
+        <d-menu-item :key="item.redirect" v-if="item.children != undefined && item.redirect">
           <template #icon>
             <i class="icon-system"></i>
           </template>
-          <span>{{ item.meta?.title }}</span>
+          {{ item.meta?.title }}
         </d-menu-item>
-      </d-menu> -->
-      <d-menu router v-for="item in userApps" :key="item.path">
-        <d-sub-menu :key="item.path" :title="item.meta?.title" v-if="item.children != undefined">
+
+        <d-sub-menu :key="item.path" :title="item.meta?.title" v-if="item.children != undefined && item.redirect == undefined">
           <template #icon>
             <i class="icon-system"></i>
           </template>
           <d-menu-item v-for="children in item.children" :key="`${item.path}/${children.path}`">
             <template #icon>
-            <i class="icon-system"></i>
-          </template>
+              <i class="icon-system"></i>
+            </template>
             {{ children.meta?.title }}
           </d-menu-item>
         </d-sub-menu>
+       
       </d-menu>
-      <!-- <d-menu router>
-        <d-sub-menu :key="item.path" :title="item.meta?.title" v-for="item in userApps">
-            <d-menu-item v-for="children in item.children" :key="`${item.path}/${children.path}`">
-              {{ children.meta?.title }}
-            </d-menu-item>
-        </d-sub-menu>
-      </d-menu> -->
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { ref } from "vue";
 import { useRouter } from "vue-router"
 
 const user = useRouter()
 
-const userApps = user.options.routes
+let userApps = ref(user.options.routes)
+userApps.value.forEach((item: any) => {
+  if (item.meta.hidden != undefined) {
+    item.isChild = true
+  } else {
+    item.isChild = false
+  }
+})
 
 console.log(userApps, "---")
 </script>
