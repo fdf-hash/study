@@ -36,7 +36,7 @@
           <span>{{ item.meta?.title }}</span>
         </d-menu-item>
       </d-menu> -->
-      <!-- <d-menu router v-for="item in userApps" :key="item.path">
+      <d-menu router v-for="item in userApps" :key="item.path">
         <d-sub-menu :key="item.path" :title="item.meta?.title" v-if="item.children != undefined">
           <template #icon>
             <i class="icon-system"></i>
@@ -48,14 +48,14 @@
             {{ children.meta?.title }}
           </d-menu-item>
         </d-sub-menu>
-      </d-menu> -->
-      <d-menu router>
+      </d-menu>
+      <!-- <d-menu router>
         <d-sub-menu :key="item.path" :title="item.meta?.title" v-for="item in userApps">
             <d-menu-item v-for="children in item.children" :key="`${item.path}/${children.path}`">
               {{ children.meta?.title }}
             </d-menu-item>
         </d-sub-menu>
-      </d-menu>
+      </d-menu> -->
     </div>
   </div>
 </template>

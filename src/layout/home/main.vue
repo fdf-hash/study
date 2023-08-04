@@ -10,7 +10,7 @@ import {useRouter} from "vue-router"
 const routers = useRouter()
 
 const path = () => {
-  routers.push({path: "/web/index"})
+  routers.push({path: "/electricity/charge"})
 }
 </script>
 
