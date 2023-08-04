@@ -13,7 +13,7 @@
   background: rgb(234, 235, 237);
   padding: 10px;
   .layout-view {
-    padding: 4px;
+    padding: 10px;
     width: 100%;
     height: 100%;
     background: #fff;
