@@ -1,26 +1,27 @@
 <template>
   <div class="layout-nav">
     <div class="layout-nav-content">
-      <d-menu mode="vertical" router v-for="(item,index) in userApps" :key="index">
-        <d-menu-item :key="item.redirect" v-if="item.children != undefined && item.redirect">
-          <template #icon>
-            <i class="icon-system"></i>
-          </template>
-          {{ item.meta?.title }}
-        </d-menu-item>
-
-        <d-sub-menu :key="item.path" :title="item.meta?.title" v-if="item.children != undefined && item.redirect == undefined">
-          <template #icon>
-            <i class="icon-system"></i>
-          </template>
-          <d-menu-item v-for="children in item.children" :key="`${item.path}/${children.path}`">
+      <d-menu mode="vertical" router>
+        <template v-for="item in userApps">
+          <d-menu-item :key="item.redirect" v-if="item.children != undefined && item.redirect">
             <template #icon>
               <i class="icon-system"></i>
             </template>
-            {{ children.meta?.title }}
+            {{ item.meta?.title }}
           </d-menu-item>
-        </d-sub-menu>
-       
+
+          <d-sub-menu :key="item.path" :title="item.meta?.title" v-if="item.children != undefined && item.redirect == undefined">
+            <template #icon>
+              <i class="icon-system"></i>
+            </template>
+            <d-menu-item v-for="children in item.children" :key="`${item.path}/${children.path}`">
+              <template #icon>
+                <i class="icon-system"></i>
+              </template>
+              {{ children.meta?.title }}
+            </d-menu-item>
+          </d-sub-menu>
+        </template>
       </d-menu>
     </div>
   </div>
