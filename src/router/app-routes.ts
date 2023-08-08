@@ -4,6 +4,8 @@ import type { RouteRecordRaw } from 'vue-router'
 // import assets from './apps/assets'
 import electricity from './apps/electricity'
 import work from './apps/work'
+import rsa from './apps/rsa'
+
 
 
 
@@ -13,6 +15,7 @@ const appRoutes: RouteRecordRaw[] = [
     // ...assets,
     // ...plan,
     ...work,
+    ...rsa,
     ...electricity,
 ]
 
