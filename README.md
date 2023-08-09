@@ -32,7 +32,7 @@
 
    - 项目基于[pnpm](https://pnpm.io/zh/next/installation)启动
 
-## node、pnpm、vue/cli、基本配置
+## node、pnpm、vue/cli、ts 基本配置
 ```js
    E:\projects\my-vue-app> node -v  
    v16.16.0

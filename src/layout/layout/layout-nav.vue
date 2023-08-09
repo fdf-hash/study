@@ -31,19 +31,8 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { useRouter } from "vue-router"
-
 const user = useRouter()
-
 let userApps = ref(user.options.routes)
-userApps.value.forEach((item: any) => {
-  if (item.meta.hidden != undefined) {
-    item.isChild = true
-  } else {
-    item.isChild = false
-  }
-})
-
-console.log(userApps, "---")
 </script>
 
 <style lang="scss" scoped>
