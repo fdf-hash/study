@@ -3,13 +3,13 @@
     <d-card class="card-demo-basic" shadow="never">
         <template #title> 公钥 </template>
         <template #content>
-            <d-textarea class="mb-2" v-model="publicKey" autosize></d-textarea>
+            <d-textarea class="mb-2" v-model="publicKey" autosize disabled></d-textarea>
         </template>
     </d-card>
     <d-card class="card-demo-basic" shadow="never">
         <template #title> 秘钥 </template>
         <template #content>
-            <d-textarea class="mb-2" v-model="privateKey" autosize></d-textarea>
+            <d-textarea class="mb-2" v-model="privateKey" autosize disabled></d-textarea>
         </template>
     </d-card>
 
@@ -92,3 +92,10 @@ const decryptClick = () => {
 }
 
 </script>
+
+<style lang="scss" scoped>
+::v-deep .devui-textarea--disabled {
+    background-color: #fff;
+    color: var(--devui-text, #252b3a) !important;
+}
+</style>
