@@ -51,6 +51,9 @@ importers:
         specifier: ^4.2.4
         version: registry.npmmirror.com/vue-router@4.2.4(vue@3.3.4)
     devDependencies:
+      '@types/node':
+        specifier: ^18.11.19
+        version: registry.npmmirror.com/@types/node@18.11.19
       '@vitejs/plugin-vue':
         specifier: ^4.2.3
         version: registry.npmmirror.com/@vitejs/plugin-vue@4.2.3(vite@4.4.4)(vue@3.3.4)
@@ -59,7 +62,7 @@ importers:
         version: registry.npmmirror.com/sass@1.63.6
       ts-conf-base:
         specifier: ^1.0.4
-        version: registry.npmmirror.com/ts-conf-base@1.0.4(@types/node@20.4.2)
+        version: registry.npmmirror.com/ts-conf-base@1.0.4(@types/node@18.11.19)
       tsx:
         specifier: ^3.12.7
         version: registry.npmmirror.com/tsx@3.12.7
@@ -71,7 +74,7 @@ importers:
         version: registry.npmmirror.com/unplugin-vue-components@0.25.1(vue@3.3.4)
       vite:
         specifier: ^4.4.4
-        version: registry.npmmirror.com/vite@4.4.4(@types/node@20.4.2)(sass@1.63.6)
+        version: registry.npmmirror.com/vite@4.4.4(@types/node@18.11.19)(sass@1.63.6)
       vue-tsc:
         specifier: ^1.8.5
         version: registry.npmmirror.com/vue-tsc@1.8.5(typescript@4.9.5)
@@ -726,10 +729,10 @@ packages:
     version: 4.14.195
     dev: false
 
-  registry.npmmirror.com/@types/node@20.4.2:
-    resolution: {integrity: sha512-Dd0BYtWgnWJKwO1jkmTrzofjK2QXXcai0dmtzvIBhcA+RsG5h8R3xlyta0kGOZRNfL9GuRtb1knmPEhQrePCEw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/node/-/node-20.4.2.tgz}
+  registry.npmmirror.com/@types/node@18.11.19:
+    resolution: {integrity: sha512-YUgMWAQBWLObABqrvx8qKO1enAvBUdjZOAWQ5grBAkp5LQv45jBvYKZ3oFS9iKRCQyFjqw6iuEa1vmFqtxYLZw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/node/-/node-18.11.19.tgz}
     name: '@types/node'
-    version: 20.4.2
+    version: 18.11.19
     dev: true
 
   registry.npmmirror.com/@types/web-bluetooth@0.0.14:
@@ -748,7 +751,7 @@ packages:
       vite: ^4.0.0
       vue: ^3.2.25
     dependencies:
-      vite: registry.npmmirror.com/vite@4.4.4(@types/node@20.4.2)(sass@1.63.6)
+      vite: registry.npmmirror.com/vite@4.4.4(@types/node@18.11.19)(sass@1.63.6)
       vue: registry.npmmirror.com/vue@3.3.4
     dev: true
 
@@ -1586,7 +1589,7 @@ packages:
       is-number: registry.npmmirror.com/is-number@7.0.0
     dev: true
 
-  registry.npmmirror.com/ts-conf-base@1.0.4(@types/node@20.4.2):
+  registry.npmmirror.com/ts-conf-base@1.0.4(@types/node@18.11.19):
     resolution: {integrity: sha512-05BOMdJj53a1aY2y3zw+RASISHLZA4mXPBvk1x5pNQwkLN3+ISudzlRN/0oe1zno0Nc+p2RSQzoRwmXoX2qlbw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/ts-conf-base/-/ts-conf-base-1.0.4.tgz}
     id: registry.npmmirror.com/ts-conf-base/1.0.4
     name: ts-conf-base
@@ -1594,7 +1597,7 @@ packages:
     peerDependencies:
       '@types/node': '*'
     dependencies:
-      '@types/node': registry.npmmirror.com/@types/node@20.4.2
+      '@types/node': registry.npmmirror.com/@types/node@18.11.19
     dev: true
 
   registry.npmmirror.com/tsx@3.12.7:
@@ -1667,7 +1670,7 @@ packages:
       webpack-virtual-modules: registry.npmmirror.com/webpack-virtual-modules@0.5.0
     dev: true
 
-  registry.npmmirror.com/vite@4.4.4(@types/node@20.4.2)(sass@1.63.6):
+  registry.npmmirror.com/vite@4.4.4(@types/node@18.11.19)(sass@1.63.6):
     resolution: {integrity: sha512-4mvsTxjkveWrKDJI70QmelfVqTm+ihFAb6+xf4sjEU2TmUCTlVX87tmg/QooPEMQb/lM9qGHT99ebqPziEd3wg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/vite/-/vite-4.4.4.tgz}
     id: registry.npmmirror.com/vite/4.4.4
     name: vite
@@ -1698,7 +1701,7 @@ packages:
       terser:
         optional: true
     dependencies:
-      '@types/node': registry.npmmirror.com/@types/node@20.4.2
+      '@types/node': registry.npmmirror.com/@types/node@18.11.19
       esbuild: registry.npmmirror.com/esbuild@0.18.14
       postcss: registry.npmmirror.com/postcss@8.4.26
       rollup: registry.npmmirror.com/rollup@3.26.3
