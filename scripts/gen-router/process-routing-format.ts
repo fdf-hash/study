@@ -12,6 +12,6 @@ export default function processFormat(routerData:any){
 */
 function firstLevelMenu(routerData:Record<string,any>[]) {
     routerData.forEach(item => {
-        console.log(item.filePath);
+        console.log(item.filePath.split('\\'));
     })
 }
