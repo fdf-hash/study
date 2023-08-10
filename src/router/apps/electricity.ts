@@ -10,12 +10,12 @@ const electricity: RouteRecordRaw[] = [
             {
                 path: 'charge',
                 meta: { title: '电费收取' },
-                component:() => import('pages/electricity/charge/main.vue')
+                component:() => import('pages/electricity/charge/charge.vue')
             },
             {
                 path: 'water',
                 meta: { title: '水费收取' },
-                component:() => import('pages/electricity/water/main.vue')
+                component:() => import('pages/electricity/water/water.vue')
             },
         ]
     }

@@ -10,12 +10,12 @@ const plan: RouteRecordRaw[] = [
             {
                 path: 'set',
                 meta: { title: '新增 SET' },
-                component:() => import('pages/plan/set/main.vue')
+                component:() => import('pages/plan/set/set.vue')
             },
             {
                 path: 'update',
                 meta: { title: '更新 UPDATE' },
-                component:() => import('pages/plan/update/main.vue')
+                component:() => import('pages/plan/update/update.vue')
             }
         ]
     }
