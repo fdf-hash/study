@@ -41,6 +41,9 @@ importers:
       styles:
         specifier: workspace:*
         version: link:src/style
+      unit:
+        specifier: workspace:*
+        version: link:src/unit
       vue:
         specifier: ^3.3.4
         version: registry.npmmirror.com/vue@3.3.4
@@ -90,6 +93,8 @@ importers:
   src/store: {}
 
   src/style: {}
+
+  src/unit: {}
 
 packages:
 

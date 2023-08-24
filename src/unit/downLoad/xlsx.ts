@@ -68,8 +68,14 @@ function startXlsx(xlsxRes:any){
     a.click();
     window.URL.revokeObjectURL(url);
 }
-
-export function downloadFileByBase64(url: string,type:'pdf'|'image'|'xlsx', xlsxRes?:any,name?: string,) {
+/**
+ * 下载文件通用方法
+ * @param url 文件
+ * @param type 文件类型
+ * @param xlsxRes xlsx下载信息
+ * @param name 可设置下载文件名
+ */
+export function downloadFileContext(url: string,type:'pdf'|'image'|'xlsx', xlsxRes?:any,name?: string,) {
     if (url && type=='pdf') {
         const myBlob = pdfBase64ToBlob(url) // pdf就调用该方法
         startDown(myBlob,name)

@@ -1,0 +1,7 @@
+{
+    "name": "unit",
+    "version": "1.0.0",
+    "description": "通用方法",
+    "main": "index.ts",
+    "license": "ISC"
+}

@@ -4,3 +4,8 @@
         <h1>资产</h1>
     </div>
 </template>
+
+<script setup lang="ts">
+import { downloadFileContext } from 'unit'
+console.log(downloadFileContext);
+</script>
