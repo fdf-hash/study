@@ -9,7 +9,7 @@ export default function secondaryAssembly(routerData: Record<string, any>) {
 }
 
 /**
- * 多层路由结构组装
+ * 结构组装
  * @param routerMsg
  */
 function multiLayerRoutingStructure(routerMsg: Record<string, any>) {
