@@ -28,7 +28,7 @@ importers:
         version: link:src/layout
       pages:
         specifier: workspace:*
-        version: link:src/pages/view
+        version: link:src/pages/views
       pinia:
         specifier: ^2.1.4
         version: registry.npmmirror.com/pinia@2.1.4(typescript@4.9.5)(vue@3.3.4)
@@ -86,7 +86,7 @@ importers:
 
   src/layout: {}
 
-  src/pages/view: {}
+  src/pages/views: {}
 
   src/router: {}
 

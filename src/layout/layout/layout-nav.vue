@@ -3,19 +3,29 @@
     <div class="layout-nav-content">
       <d-menu mode="vertical" :multiple="false" router>
         <template v-for="item in userApps">
-          <d-menu-item :key="item.redirect" v-if="item.children != undefined && item.redirect">
+          <d-menu-item
+            :key="item.redirect"
+            v-if="item.children != undefined && item.redirect"
+          >
             <template #icon>
               <i class="icon-system"></i>
             </template>
             {{ item.meta?.title }}
           </d-menu-item>
 
-          <d-sub-menu :key="item.path" :title="item.meta?.title"
-            v-if="item.children != undefined && item.redirect == undefined">
+          <d-sub-menu
+            :key="item.path"
+            :title="item.meta?.title"
+            v-if="item.children != undefined && item.redirect == undefined"
+          >
             <template #icon>
               <i class="icon-system"></i>
             </template>
-            <d-menu-item v-for="children in item.children" :key="`${item.path}/${children.path}`">
+            <d-menu-item
+              v-for="children in item.children"
+              :key="`${item.path}/${children.path}`"
+            >
+            
               <template #icon>
                 <i class="icon-system"></i>
               </template>
@@ -29,10 +39,22 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
-import { useRouter } from "vue-router"
+import {ref} from "vue"
+import {useRouter} from "vue-router"
 const user = useRouter()
 let userApps = ref(user.options.routes)
+userApps.value.forEach(item => {
+  if(item.children){
+    item.children.forEach((childItem,index) => {
+      if(childItem.props){
+        item.children?.splice(index,1)
+      }
+    })
+  }
+})
+console.log(userApps.value);
+
+
 </script>
 
 <style lang="scss" scoped>

@@ -10,7 +10,7 @@ const path = require('path');
 /**
  * 指定目录
  */
-const directoryPath = 'src/pages/view';
+const directoryPath = 'src/pages/views';
 
 /**
  * 用正则表达式匹配注释格式
