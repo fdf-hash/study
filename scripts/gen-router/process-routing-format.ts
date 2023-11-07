@@ -1,5 +1,4 @@
-import {log} from "console"
-
+import secondaryAssembly from "./secondary-assembly"
 /**
  * 路由类型参数
  */
@@ -11,38 +10,82 @@ interface RouteConfig {
 }
 
 export default function processFormat(routerData: any) {
-  firstLevelMenu(routerData)
+  folder(routerData)
 }
+/**
+ * 根据文件名称区分文件夹
+ */
+function folder(routerData: Record<string, any>[]) {
+  const result = {}
 
+  routerData.forEach((item) => {
+    const filePath = item.filePath
+    const match = item.match
+
+    // 使用正则表达式匹配views\\后面的单词
+    const matchResult = filePath.match(/views\\([^\\]+)/)
+
+    if (matchResult && matchResult.length > 1) {
+      const key = matchResult[1]
+      if (!result[key]) {
+        result[key] = {views: key, filePaths: []}
+      }
+      result[key].filePaths.push(filePath)
+      if (result[key].matches === undefined) {
+        result[key].matches = []
+      }
+      result[key].matches.push(match)
+    }
+  })
+
+  // 将结果转化为数组
+  const newArray: Record<string, any> = Object.values(result)
+
+  newArray.forEach((item: Record<string, any>) => {
+    firstLevelMenu(item)
+  })
+}
 /**
  * 组装路由
  */
-function firstLevelMenu(routerData: Record<string, any>[]) {
-  routerData.forEach((item) => {
-    let itemSplitArr = item.match[1].split(" ")
-    // 如果 item.match 包含 path 为二级路由
-    if (itemSplitArr[2] != "") {
-      assembleSecondaryRouting(item)
-    } else {
+function firstLevelMenu(folderArray: Record<string, any>) {
+  let childrenRouter = folderArray.matches.map(
+    (item: Record<string, any>, index: number) => {
+      return assembleSecondaryRouting(
+        folderArray.views,
+        folderArray.filePaths[index],
+        item
+      )
     }
-  })
+  )
+  /**二次组装 */
+  secondaryAssembly(childrenRouter)
 }
 
 /**
- * 二级路由生成
- * @param item
+ * 第一次组装路由
+ * @param name 父级路由名称
+ * @param filePaths 路由路径
+ * @param item RouteConfig 整体参数
+ * @returns
  */
-function assembleSecondaryRouting(item: Record<string, any>) {
-  const {title, path} = parseRoute(item.match[0])
-  const {name} = pathParent(item.filePath)
+function assembleSecondaryRouting(
+  name: string,
+  filePaths: string,
+  item: Record<string, any>
+): RouteConfig {
+  const {title, path} = parseRoute(item[0])
+
+  let itemSplitArr = item[1].split(" ")
+
   let children: RouteConfig = {
     path: `${name}/${path}`,
-    props: true,
+    props: itemSplitArr[2] !== "" ? true : false,
     meta: {title: title},
-    component: `() => import('${item.filePath.replace(/src\\/, "")}')`,
+    component: `() => import('${filePaths.replace(/src\\/, "")}')`,
   }
 
-  log(children)
+  return children
 }
 /**
  * {
@@ -88,17 +131,6 @@ function parseRoute(routeStr: string): {title: string; path: string} {
   return {title, path}
 }
 
-/**
- * 子路由父级文件名称
- * @param filePath
- * @returns
- */
-function pathParent(filePath: string): {name: string} {
-  const regex = /\\([^\\]+)\./
-  const match = filePath.match(regex)
-  const name = match ? match[1]! : ""
-  return {name}
-}
 /**
  * 
 import type { RouteRecordRaw } from 'vue-router'
