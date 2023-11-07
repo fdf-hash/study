@@ -11,27 +11,27 @@ interface RouteConfig {
 }
 
 export default function processFormat(routerData: any) {
-  // routerData.forEach((item:any) => {
-  //     console.log(item.filePath);
-  // })
-
   firstLevelMenu(routerData)
 }
+
 /**
- * 判断路由是否为1级菜单
+ * 组装路由
  */
 function firstLevelMenu(routerData: Record<string, any>[]) {
   routerData.forEach((item) => {
     let itemSplitArr = item.match[1].split(" ")
     // 如果 item.match 包含 path 为二级路由
     if (itemSplitArr[2] != "") {
-      // 二级路由生成
       assembleSecondaryRouting(item)
     } else {
     }
   })
 }
 
+/**
+ * 二级路由生成
+ * @param item
+ */
 function assembleSecondaryRouting(item: Record<string, any>) {
   const {title, path} = parseRoute(item.match[0])
   const {name} = pathParent(item.filePath)
@@ -44,6 +44,33 @@ function assembleSecondaryRouting(item: Record<string, any>) {
 
   log(children)
 }
+/**
+ * {
+  path: 'form/create',
+  props: true,
+  meta: { title: '资产新增' },
+  component: "() => import('pages\\views\\assets\\form.vue')"
+}
+{
+  path: 'form/:id/view',
+  props: true,
+  meta: { title: '资产查看' },
+  component: "() => import('pages\\views\\assets\\form.vue')"
+}
+{
+  path: 'form/:id/update',
+  props: true,
+  meta: { title: '资产更新' },
+  component: "() => import('pages\\views\\assets\\form.vue')"
+}
+{
+  path: 'form/:id/:taskId/audit',
+  props: true,
+  meta: { title: '资产审核' },
+  component: "() => import('pages\\views\\assets\\form.vue')"
+}
+ */
+
 /**
  * 路由名称、路径
  * @param routeStr
