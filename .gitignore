@@ -25,4 +25,4 @@ dist-ssr
 *.sln
 *.sw?
 *.css
-/src/router/app/*
+./src/router/*
