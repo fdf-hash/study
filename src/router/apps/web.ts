@@ -8,7 +8,7 @@
             component: layout,
             children:[
   {
-    "path": "web",
+    "path": "main",
     "props": false,
     "meta": {
       "title": "web网页"

@@ -59,7 +59,7 @@ function firstLevelMenu(folderArray: Record<string, any>) {
     }
   )
   /**二次组装 */
-  secondaryAssembly(childrenRouter)
+  secondaryAssembly(childrenRouter,folderArray.views)
 }
 
 /**
@@ -75,6 +75,7 @@ function assembleSecondaryRouting(
   item: Record<string, any>
 ): RouteConfig {
   const {title, path} = parseRoute(item[0])
+  const {childrenName} = childrenRoute(filePaths)
 
   let pathComponent = `component: () => import('${filePaths
     .replace(/src\\/, "")
@@ -82,10 +83,7 @@ function assembleSecondaryRouting(
   let itemSplitArr = item[1].split(" ")
 
   let children: RouteConfig = {
-    path:
-      itemSplitArr[2] !== ""
-        ? `${childrenRoute(filePaths)}/${path}`
-        : `${name}`,
+    path: itemSplitArr[2] !== "" ? `${childrenName}/${path}` : `${childrenName}`,
     props: itemSplitArr[2] !== "" ? true : false,
     meta: {title: title},
     component: `${pathComponent}`,

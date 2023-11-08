@@ -40,7 +40,7 @@
     component: () => import('pages/assets/form.vue')
   },
   {
-    "path": "assets",
+    "path": "main",
     "props": false,
     "meta": {
       "title": "资产"

@@ -36,7 +36,7 @@ let deadline = ref();
 let isWork = ref(true)
 
 const path = () => {
-  routers.push({ path: "/electricity/electricity" })
+  routers.push({ path: "/electricity/charge" })
 }
 
 const notPath = () => {
@@ -44,7 +44,7 @@ const notPath = () => {
   deadline.value = Date.now() + 3 * 900
 
   setTimeout(() => {
-    routers.push({ path: "/electricity/electricity" })
+    routers.push({ path: "/electricity/charge" })
   }, 3000)
 }
 </script>

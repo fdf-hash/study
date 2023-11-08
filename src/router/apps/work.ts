@@ -8,7 +8,7 @@
             component: layout,
             children:[
   {
-    "path": "work",
+    "path": "main",
     "props": false,
     "meta": {
       "title": "工作台"

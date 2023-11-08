@@ -8,7 +8,7 @@
             component: layout,
             children:[
   {
-    "path": "rsa",
+    "path": "main",
     "props": false,
     "meta": {
       "title": "RSA加密"

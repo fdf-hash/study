@@ -4,16 +4,17 @@ import createRouterFile from "./file/create-router"
  * 二次组装路由 组装成最终的路由文件
  * @param routerData 整理好的路由
  */
-export default function secondaryAssembly(routerData: Record<string, any>) {
-  multiLayerRoutingStructure(routerData)
+export default function secondaryAssembly(routerData: Record<string, any>,titleName:string) {
+  multiLayerRoutingStructure(routerData,titleName)
 }
 
 /**
  * 结构组装
  * @param routerMsg
  */
-function multiLayerRoutingStructure(routerMsg: Record<string, any>) {
-  let titleName = routerMsg[routerMsg.length - 1].path.replace(/\//g, "")
+function multiLayerRoutingStructure(routerMsg: Record<string, any>,titleName:string) {
+  
+  // let titleName = routerMsg[routerMsg.length - 1].path.replace(/\//g, "")
 
   // 使用 map 方法来将函数引用传递给生成的路由配置
   let childrenArray = routerMsg.map((route) => ({
