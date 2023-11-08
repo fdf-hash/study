@@ -76,13 +76,19 @@ function assembleSecondaryRouting(
 ): RouteConfig {
   const {title, path} = parseRoute(item[0])
 
+  let pathComponent = `component: () => import('${filePaths
+    .replace(/src\\/, "")
+    .replace(/\\/g, "/")}')`
   let itemSplitArr = item[1].split(" ")
 
   let children: RouteConfig = {
-    path: `${name}/${path}`,
+    path:
+      itemSplitArr[2] !== ""
+        ? `${childrenRoute(filePaths)}/${path}`
+        : `${name}`,
     props: itemSplitArr[2] !== "" ? true : false,
     meta: {title: title},
-    component: `() => import('${filePaths.replace(/src\\/, "")}')`,
+    component: `${pathComponent}`,
   }
 
   return children
@@ -132,36 +138,15 @@ function parseRoute(routeStr: string): {title: string; path: string} {
 }
 
 /**
- * 
-import type { RouteRecordRaw } from 'vue-router'
-import {layout} from 'layout'
-
-const assets: RouteRecordRaw[] = [
-    {
-        path: '/assets',
-        meta: { title: 'Assets网页' },
-        component: layout,
-        children:[
-            {
-                path:'index',
-                meta: { title: 'Assets网页' },
-                component:() => import('pages/assets/main.vue')
-            },
-            {
-                path: 'form/create',
-                props: true,
-                meta: { title: 'Assets网页(新增)' },
-                component: () => import('pages/assets/form.vue')
-            }, 
-            {
-                path: 'form/:id/view',
-                props: true,
-                meta: { title: 'Assets网页(查看)' },
-                component: () => import('pages/assets/form.vue')
-            },
-        ]
-    }
-]
-
-export default assets
+ * 子级名称、路径
+ * @param pathStr
+ * @returns
  */
+function childrenRoute(pathStr: string): {childrenName: string} {
+  // 使用正则表达式来匹配 .vue 和 \ 之间的数据
+  const regex = /\\([^\\]+)\.vue/
+  const match = pathStr.match(regex)
+
+  const childrenName = match ? match[1] : ""
+  return {childrenName}
+}
