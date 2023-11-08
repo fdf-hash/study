@@ -7,9 +7,6 @@ import work from './apps/work'
 import rsa from './apps/rsa'
 
 
-
-
-
 const appRoutes: RouteRecordRaw[] = [
     ...web,
     ...assets,
