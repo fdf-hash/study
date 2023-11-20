@@ -1,5 +1,9 @@
 import secondaryAssembly from "./secondary-assembly"
 /**
+ * 计算文件夹数量
+ */
+let fileRouter = 0
+/**
  * 路由类型参数
  */
 interface RouteConfig {
@@ -40,7 +44,8 @@ function folder(routerData: Record<string, any>[]) {
 
   // 将结果转化为数组
   const newArray: Record<string, any> = Object.values(result)
-
+  // 生成文件数量
+  fileRouter = newArray.length
   newArray.forEach((item: Record<string, any>) => {
     firstLevelMenu(item)
   })
@@ -59,7 +64,7 @@ function firstLevelMenu(folderArray: Record<string, any>) {
     }
   )
   /**二次组装 */
-  secondaryAssembly(childrenRouter,folderArray.views)
+  secondaryAssembly(childrenRouter,folderArray.views,fileRouter)
 }
 
 /**
@@ -76,7 +81,8 @@ function assembleSecondaryRouting(
 ): RouteConfig {
   const {title, path} = parseRoute(item[0])
   const {childrenName} = childrenRoute(filePaths)
-
+  console.log(title);
+  
   let pathComponent = `component: () => import('${filePaths
     .replace(/src\\/, "")
     .replace(/\\/g, "/")}')`

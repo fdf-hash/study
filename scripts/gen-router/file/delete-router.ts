@@ -26,7 +26,7 @@ export default function deleteRouterFile(folderPath: string) {
           if (err) {
             console.error("无法删除文件:", err)
           } else {
-            console.log("已删除文件:", filePath)
+            // console.log("已删除文件:", filePath)
           }
         })
       })

@@ -1,7 +1,17 @@
 const fs = require("fs")
 const path = require("path")
 
+import createAppRoutes from "./create-app-routes"
 import deleteRouterFile from "./delete-router"
+
+/**
+ * 判断路由文件是否生成完成  写入app-routes文件
+ */
+
+let fileRouterNum:number = 0
+let fileRouterTitle: string[] = []
+let fileRouterTitleChinese: string[] = []
+
 
 /**
  * 创建  \my-vue-app\src\router\apps  创建路径下的所有路由文件
@@ -23,9 +33,13 @@ const folderPath = path.join(
 // 删除文件
 deleteRouterFile(folderPath)
 
-export default function createRouterFile(data: any, titleFile: string) {
-  // console.log(data, titleFile)
-  // 创建文件夹（如果它不存在）
+export default function createRouterFile(
+  data: any,
+  titleFile: string,
+  fileRouter: number,
+  fileTitle: string
+) {
+  fileRouterNum++
 
   if (!fs.existsSync(folderPath)) {
     fs.mkdirSync(folderPath, {recursive: true})
@@ -38,5 +52,11 @@ export default function createRouterFile(data: any, titleFile: string) {
   const filePath = path.join(folderPath, `${titleFile}.ts`)
 
   fs.writeFileSync(filePath, data)
-  console.log(`Added content to ${filePath}`)
+  console.log("文件全部写入完成",fileTitle)
+  fileRouterTitle.push(titleFile)
+  fileRouterTitleChinese.push(fileTitle)
+  if (fileRouterNum === fileRouter) {
+    createAppRoutes(fileRouterTitle,fileRouterTitleChinese)
+  }
+  // console.log(`Added content to ${filePath}`)
 }

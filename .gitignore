@@ -25,7 +25,8 @@ dist-ssr
 *.sln
 *.sw?
 *.css
+
 src/router/apps
 
-src/router/*.ts
+src/router/app-routes.ts
 
