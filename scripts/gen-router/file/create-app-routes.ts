@@ -1,6 +1,5 @@
 const fs = require("fs")
 const path = require("path")
-// const prettier = require("prettier")
 // 获取app-routes.ts目录
 const scriptDirectory = __dirname
 
