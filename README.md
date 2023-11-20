@@ -53,3 +53,31 @@
 
    运行：pnpm dev || pnpm run dev || vscode自带npm脚本一键启动
 ```
+## 一键生成路由脚本
+  - 通过匹配文件关键字
+  
+  示例文件：`/src/pages/views/assets/`
+
+  - 一级路由
+  ```vue
+   <!-- <router title="资产" /> -->
+   <template>
+      xxxxxxxxx
+   </template>
+  ```
+  - 二级路由 可带参数 path
+  ```vue
+   <!-- <router title="资产新增" path="create"/> -->
+   <!-- <router title="资产查看" path=":id/view"/> -->
+   <!-- <router title="资产更新" path=":id/update"/> -->
+   <!-- <router title="资产审核" path=":id/:taskId/audit"/> -->
+
+   <template>
+      <div>
+         <h1>资产查看</h1>
+      </div>
+   </template>
+  ```
+```ts
+   命令: pnpm run gen-routers
+```
