@@ -11,7 +11,6 @@ const folderPath = path.join(
   "router",
   "app-routes.ts"
 )
-console.log(folderPath, "--------")
 
 export default function createAppRoutes(
   fileTitle: string[],
