@@ -23,7 +23,8 @@
     "vue-devui": "1.5.4-alpha.0",
     "vue-router": "^4.2.4",
     "cat-kit": "2.4.0",
-    "jsencrypt":"3.3.2"
+    "jsencrypt":"3.3.2",
+    "crypto-js":"~4.2.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.2.3",

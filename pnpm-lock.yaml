@@ -17,6 +17,9 @@ importers:
       components:
         specifier: workspace:*
         version: link:src/components
+      crypto-js:
+        specifier: ~4.2.0
+        version: registry.npmmirror.com/crypto-js@4.2.0
       devui-theme:
         specifier: ^0.0.4
         version: registry.npmmirror.com/devui-theme@0.0.4
@@ -1050,6 +1053,12 @@ packages:
     resolution: {integrity: sha512-wOlqdqziE/NNTUJsfSgXmBMIrYmfd5V0HCGsR8uAKHcg+h9NENWINcfRjtWGU77wDHC8B8ijV4hMTGYbrKovng==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/clipboard-copy/-/clipboard-copy-4.0.1.tgz}
     name: clipboard-copy
     version: 4.0.1
+    dev: false
+
+  registry.npmmirror.com/crypto-js@4.2.0:
+    resolution: {integrity: sha512-KALDyEYgpY+Rlob/iriUtjV6d5Eq+Y191A5g4UqLAi8CyGP9N1+FdVbkc1SxKc2r4YAYqG8JzO2KGL+AizD70Q==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/crypto-js/-/crypto-js-4.2.0.tgz}
+    name: crypto-js
+    version: 4.2.0
     dev: false
 
   registry.npmmirror.com/csstype@3.1.2:
