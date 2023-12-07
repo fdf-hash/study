@@ -1,24 +1,23 @@
-
-  import type { RouteRecordRaw } from 'vue-router'
-  import assets from './apps/assets'
-import web from './apps/web'
+import type { RouteRecordRaw } from 'vue-router'
+import assets from './apps/assets'
 import work from './apps/work'
+import web from './apps/web'
+import electricity from './apps/electricity'
 import rsa from './apps/rsa'
 import plan from './apps/plan'
-import electricity from './apps/electricity'
 
-  const appRoutes: RouteRecordRaw[] = [
+const appRoutes: RouteRecordRaw[] = [
 /* 资产*/
- ...assets,
-/* web网页*/
- ...web,
-/* 工作台*/
- ...work,
-/* RSA加密*/
- ...rsa,
-/* 更新*/
- ...plan,
-/* 电费收取*/
- ...electricity,
-]
-  export default appRoutes
+  ...assets,
+     /* 工作台*/
+  ...work,
+     /* web网页*/
+  ...web,
+     /* 水费收取*/
+  ...electricity,
+     /* RSA加密*/
+  ...rsa,
+     /* 更新*/
+  ...plan,
+     ]
+export default appRoutes

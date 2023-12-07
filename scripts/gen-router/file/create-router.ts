@@ -52,7 +52,6 @@ export default function createRouterFile(
   const filePath = path.join(folderPath, `${titleFile}.ts`)
 
   fs.writeFileSync(filePath, data)
-  console.log("文件全部写入完成",fileTitle)
   fileRouterTitle.push(titleFile)
   fileRouterTitleChinese.push(fileTitle)
   if (fileRouterNum === fileRouter) {

@@ -43,14 +43,15 @@
     <br />
 
     <d-row :gutter="{ xs: 10, sm: 40 }">
-      <d-col :span="6" class="col-gutter">
-        <d-form-item field="glys" label="阁楼总水">
-          <d-input width="200px" v-model="formModel.glys" placeholder="请输入" disabled></d-input>
-        </d-form-item>
-      </d-col>
+      
       <d-col :span="6" class="col-gutter">
         <d-form-item field="fiveys" label="408总水">
           <d-input width="200px" v-model="formModel.fiveys" placeholder="请输入" disabled></d-input>
+        </d-form-item>
+      </d-col>
+      <d-col :span="6" class="col-gutter">
+        <d-form-item field="glys" label="阁楼总水">
+          <d-input width="200px" v-model="formModel.glys" placeholder="请输入" disabled></d-input>
         </d-form-item>
       </d-col>
       <d-col :span="6" class="col-gutter">
@@ -63,15 +64,22 @@
     <br />
     <d-row :gutter="{ xs: 10, sm: 40 }">
       <d-col :span="6" class="col-gutter">
-        <d-form-item field="glsf" label="阁楼水费">
-          <d-input width="200px" v-model="formModel.glsf" placeholder="请输入" disabled></d-input>
-        </d-form-item>
-      </d-col>
-      <d-col :span="6" class="col-gutter">
         <d-form-item field="fivesf" label="408水费">
           <d-input width="200px" v-model="formModel.fivesf" placeholder="请输入" disabled></d-input>
         </d-form-item>
       </d-col>
+      <d-col :span="6" class="col-gutter">
+        <d-form-item field="glsf" label="阁楼水费">
+          <d-input width="200px" v-model="formModel.glsf" placeholder="请输入" disabled></d-input>
+        </d-form-item>
+      </d-col>
+
+      <d-col :span="6" class="col-gutter">
+        <d-form-item field="zsf" label="总水费">
+          <d-input width="200px" v-model="formModel.zsf" placeholder="请输入" disabled></d-input>
+        </d-form-item>
+      </d-col>
+      
     </d-row>
     <d-form-operation class="form-demo-form-operation">
       <d-button variant="solid" @click="count">计算</d-button>
@@ -86,8 +94,8 @@ import { date } from 'cat-kit';
 export default defineComponent({
   setup() {
     let formModel = reactive({
-      syzsb: 0,//上次总水表
-      sygls: 0,//上次阁楼水
+      syzsb: 1113,//上次总水表
+      sygls: 909,//上次阁楼水
       byzsb: 0,//本次总水表
       bygls: 0,//本次阁楼水
 
@@ -98,7 +106,8 @@ export default defineComponent({
       
       glsf: 0,//阁楼水费
       fivesf: 0,//408水费,
-      rangeDatePickerPro: ['', date().format('yyyy-MM-dd')]
+      zsf: 417,//总水费
+      rangeDatePickerPro: ['2023/02/21', date().format('yyyy-MM-dd')]
     });
 
     return {

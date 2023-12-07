@@ -20,16 +20,17 @@ export default function createAppRoutes(
   let routeRow = ``
   fileTitle.forEach((item, index) => {
     let str = `import ${item} from './apps/${item}'\n`
-    let obj = `/* ${fileTitleChinese[index]}*/\n ...${item},\n`
+    let obj = `/* ${fileTitleChinese[index]}*/
+  ...${item},
+     `
     fileRoute += str
     routeRow += obj
   })
-  let contentToWrite = `
-  import type { RouteRecordRaw } from 'vue-router'
-  ${fileRoute}
-  const appRoutes: RouteRecordRaw[] = [
+  let contentToWrite = `import type { RouteRecordRaw } from 'vue-router'
+${fileRoute}
+const appRoutes: RouteRecordRaw[] = [
 ${routeRow}]
-  export default appRoutes`
+export default appRoutes`
   //   contentToWrite = prettier.format(contentToWrite, {parser: "json"})
   // 异步写入文件，覆盖原有内容
   fs.writeFile(folderPath, contentToWrite, (err) => {
