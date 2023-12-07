@@ -1,24 +1,35 @@
 <!-- <router title="电费收取" /> -->
 <template>
   <d-form :data="formModel">
-    <d-row :gutter="{ xs: 10, sm: 40 }">
+    <d-row :gutter="{xs: 10, sm: 40}">
       <d-col :span="24" class="col-gutter">
         <d-form-item field="rangeDatePickerPro" label="收费日期">
-          <d-range-date-picker-pro format="YYYY/MM/DD" v-model="formModel.rangeDatePickerPro"></d-range-date-picker-pro>
+          <d-range-date-picker-pro
+            format="YYYY/MM/DD"
+            v-model="formModel.rangeDatePickerPro"
+          ></d-range-date-picker-pro>
         </d-form-item>
       </d-col>
     </d-row>
     <h3>上次表数 {{ filterTime(formModel.rangeDatePickerPro[0]) }}</h3>
     <br />
-    <d-row :gutter="{ xs: 10, sm: 40 }">
+    <d-row :gutter="{xs: 10, sm: 40}">
       <d-col :span="6" class="col-gutter">
         <d-form-item field="syzdb" label="上次总电表">
-          <d-input width="200px" v-model="formModel.syzdb" placeholder="请输入"></d-input>
+          <d-input
+            width="200px"
+            v-model="formModel.syzdb"
+            placeholder="请输入"
+          ></d-input>
         </d-form-item>
       </d-col>
       <d-col :span="6" class="col-gutter">
         <d-form-item field="sygld" label="上次阁楼电">
-          <d-input width="200px" v-model="formModel.sygld" placeholder="请输入"></d-input>
+          <d-input
+            width="200px"
+            v-model="formModel.sygld"
+            placeholder="请输入"
+          ></d-input>
         </d-form-item>
       </d-col>
       <!-- <d-col :span="6" class="col-gutter">
@@ -36,15 +47,23 @@
     <h3>本次表数 {{ filterTime(formModel.rangeDatePickerPro[1]) }}</h3>
     <br />
 
-    <d-row :gutter="{ xs: 10, sm: 40 }">
+    <d-row :gutter="{xs: 10, sm: 40}">
       <d-col :span="6" class="col-gutter">
         <d-form-item field="byzdb" label="本次总电表">
-          <d-input width="200px" v-model="formModel.byzdb" placeholder="请输入"></d-input>
+          <d-input
+            width="200px"
+            v-model="formModel.byzdb"
+            placeholder="请输入"
+          ></d-input>
         </d-form-item>
       </d-col>
       <d-col :span="6" class="col-gutter">
         <d-form-item field="bygld" label="本次阁楼电">
-          <d-input width="200px" v-model="formModel.bygld" placeholder="请输入"></d-input>
+          <d-input
+            width="200px"
+            v-model="formModel.bygld"
+            placeholder="请输入"
+          ></d-input>
         </d-form-item>
       </d-col>
     </d-row>
@@ -52,34 +71,79 @@
     <h3>用电情况</h3>
     <br />
 
-    <d-row :gutter="{ xs: 10, sm: 40 }">
+    <d-row :gutter="{xs: 10, sm: 40}">
       <d-col :span="6" class="col-gutter">
         <d-form-item field="glyd" label="阁楼总用电">
-          <d-input width="200px" v-model="formModel.glyd" placeholder="请输入" disabled></d-input>
+          <d-input
+            width="200px"
+            v-model="formModel.glyd"
+            placeholder="请输入"
+            disabled
+          ></d-input>
         </d-form-item>
       </d-col>
       <d-col :span="6" class="col-gutter">
         <d-form-item field="fiveyd" label="408总用电">
-          <d-input width="200px" v-model="formModel.fiveyd" placeholder="请输入" disabled></d-input>
+          <d-input
+            width="200px"
+            v-model="formModel.fiveyd"
+            placeholder="请输入"
+            disabled
+          ></d-input>
         </d-form-item>
       </d-col>
       <d-col :span="6" class="col-gutter">
         <d-form-item field="byylzd" label="本次总用电">
-          <d-input width="200px" v-model="formModel.byylzd" placeholder="请输入" disabled></d-input>
+          <d-input
+            width="200px"
+            v-model="formModel.byylzd"
+            placeholder="请输入"
+            disabled
+          ></d-input>
         </d-form-item>
       </d-col>
     </d-row>
     <h3>收取电费</h3>
     <br />
-    <d-row :gutter="{ xs: 10, sm: 40 }">
+    <d-row :gutter="{xs: 10, sm: 40}">
       <d-col :span="6" class="col-gutter">
         <d-form-item field="gldf" label="阁楼电费">
-          <d-input width="200px" v-model="formModel.gldf" placeholder="请输入" disabled></d-input>
+          <d-input
+            width="200px"
+            v-model="formModel.gldf"
+            placeholder="请输入"
+            disabled
+          ></d-input>
         </d-form-item>
       </d-col>
       <d-col :span="6" class="col-gutter">
         <d-form-item field="fivedf" label="408电费">
-          <d-input width="200px" v-model="formModel.fivedf" placeholder="请输入" disabled></d-input>
+          <d-input
+            width="200px"
+            v-model="formModel.fivedf"
+            placeholder="请输入"
+            disabled
+          ></d-input>
+        </d-form-item>
+      </d-col>
+      <d-col :span="6" class="col-gutter">
+        <d-form-item field="zdf" label="总电费">
+          <d-input
+            width="200px"
+            v-model="formModel.zdf"
+            placeholder="请输入"
+            disabled
+          ></d-input>
+        </d-form-item>
+      </d-col>
+      <d-col :span="6" class="col-gutter">
+        <d-form-item field="sjzdf" label="实际总电费">
+          <d-input
+            width="200px"
+            v-model="formModel.sjzdf"
+            placeholder="请输入"
+            disabled
+          ></d-input>
         </d-form-item>
       </d-col>
     </d-row>
@@ -88,59 +152,79 @@
     </d-form-operation>
   </d-form>
 </template>
-  
+
 <script lang="ts" scoped>
-import { defineComponent, reactive } from 'vue';
-import { date } from 'cat-kit';
+import {defineComponent, reactive} from "vue"
+import {date, n} from "cat-kit"
 
 export default defineComponent({
   setup() {
     let formModel = reactive({
-      syzdb: 0,//上次总电表
-      sygld: 0,//上次阁楼电
-      byzdb: 0,//本次总电表
-      bygld: 0,//本次阁楼电
+      /**上次总电表 */
+      syzdb: 47971,
+      /**上次阁楼电 */
+      sygld: 18205,
+      /**本次总电表 */
+      byzdb: 0,
+      /**本次阁楼电 */
+      bygld: 0,
 
+      /**408+阁楼总用电 */
+      byylzd: 0,
+      /**阁楼总用电 */
+      glyd: 0,
+      /**408总用电 */
+      fiveyd: 0,
 
-      byylzd: 0, //408+阁楼总用电
-      glyd: 0, //阁楼总用电
-      fiveyd: 0, //408总用电
-      
-      gldf: 0,//阁楼电费
-      fivedf: 0,//408电费,
-      rangeDatePickerPro: ['', date().format('yyyy-MM-dd')]
-    });
+      /**阁楼电费 */
+      gldf: 0,
+      /**408电费 */
+      fivedf: 0,
+      /**收取总电费 */
+      zdf: 726,
+      /**实际总电费 */
+      sjzdf: 0,
+      rangeDatePickerPro: ["2023/10/07", date().format("yyyy-MM-dd")],
+    })
 
     return {
       formModel,
-    };
+    }
   },
   methods: {
     count() {
       // 408+阁楼总用电  = 本次总电表 - 上次总电表
-      this.formModel.byylzd = Number((this.formModel.byzdb - this.formModel.syzdb).toFixed(2))
+      this.formModel.byylzd = Number(
+        (this.formModel.byzdb - this.formModel.syzdb).toFixed(2)
+      )
 
       // 阁楼总用电 = 本次阁楼电-上次阁楼电
-      this.formModel.glyd = Number((this.formModel.bygld - this.formModel.sygld).toFixed(2))
+      this.formModel.glyd = Number(
+        (this.formModel.bygld - this.formModel.sygld).toFixed(2)
+      )
 
       // 408用电 = 408+阁楼总用电 - 阁楼总用电
-      this.formModel.fiveyd = Number(( this.formModel.byylzd - this.formModel.glyd).toFixed(2))
+      this.formModel.fiveyd = Number(
+        (this.formModel.byylzd - this.formModel.glyd).toFixed(2)
+      )
 
+      /**平均电费 */
+      let avg = n.div(this.formModel.zdf, this.formModel.byylzd)
       // 阁楼电费
-      this.formModel.gldf = Number(( this.formModel.glyd * 0.7).toFixed(2))
+      this.formModel.gldf = Number((this.formModel.glyd * avg).toFixed(2))
 
-      // 阁楼电费
-      this.formModel.fivedf = Number(( this.formModel.fiveyd * 0.5).toFixed(2))
-      
+      // 408电费
+      this.formModel.fivedf = Number((this.formModel.fiveyd * avg).toFixed(2))
+
+      this.formModel.sjzdf = n.plus(this.formModel.gldf,this.formModel.fivedf)
     },
-    filterTime(val:any){
-
-      return val?date(val).format('yyyy-MM-dd'):''
-    }
+    filterTime(val: any) {
+      return val ? date(val).format("yyyy-MM-dd") : ""
+    },
   },
-});
+})
 </script>
-  
+
 <style lang="scss" scoped>
 .form-demo-set-form-size {
   display: flex;
@@ -148,19 +232,17 @@ export default defineComponent({
   margin-bottom: 16px;
 }
 
-.form-demo-form-operation>* {
+.form-demo-form-operation > * {
   margin-right: 8px;
 }
 ::v-deep .devui-form__label {
-    align-self: center;
+  align-self: center;
 }
-::v-deep .devui-input--disabled{
+::v-deep .devui-input--disabled {
   background-color: #fff;
   color: var(--devui-text, #252b3a) !important;
-  .devui-input__inner{
-  color: var(--devui-text, #252b3a);
-
+  .devui-input__inner {
+    color: var(--devui-text, #252b3a);
   }
 }
 </style>
-  
