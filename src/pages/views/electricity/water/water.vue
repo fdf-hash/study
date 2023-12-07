@@ -209,22 +209,14 @@ export default defineComponent({
       this.formModel.fiveys = Number(
         (this.formModel.byylzs - this.formModel.glys).toFixed(2)
       )
-      console.log(n.div(this.formModel.zsf, this.formModel.byylzs))
 
+      /**平均水费 */
+      let avg = n.div(this.formModel.zsf, this.formModel.byylzs)
       // 阁楼水费
-      this.formModel.glsf = Number(
-        (
-          this.formModel.glys * n.div(this.formModel.zsf, this.formModel.byylzs)
-        ).toFixed(2)
-      )
+      this.formModel.glsf = Number((this.formModel.glys * avg).toFixed(2))
 
       // 408水费
-      this.formModel.fivesf = Number(
-        (
-          this.formModel.fiveys *
-          n.div(this.formModel.zsf, this.formModel.byylzs)
-        ).toFixed(2)
-      )
+      this.formModel.fivesf = Number((this.formModel.fiveys * avg).toFixed(2))
 
       this.formModel.sjzsf = n.plus(this.formModel.glsf, this.formModel.fivesf)
 
