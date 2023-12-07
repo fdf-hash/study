@@ -96,7 +96,7 @@
     <h3>收取水费</h3>
     <br />
     <d-row :gutter="{xs: 10, sm: 40}">
-      <d-col :span="4" class="col-gutter">
+      <d-col :span="6" class="col-gutter">
         <d-form-item field="fivesf" label="408水费">
           <d-input
             width="200px"
@@ -105,8 +105,9 @@
             disabled
           ></d-input>
         </d-form-item>
+        
       </d-col>
-      <d-col :span="4" class="col-gutter">
+      <d-col :span="6" class="col-gutter">
         <d-form-item field="glsf" label="阁楼水费">
           <d-input
             width="200px"
@@ -117,7 +118,7 @@
         </d-form-item>
       </d-col>
 
-      <d-col :span="4" class="col-gutter">
+      <d-col :span="6" class="col-gutter">
         <d-form-item field="zsf" label="总水费">
           <d-input
             width="200px"
@@ -127,7 +128,7 @@
           ></d-input>
         </d-form-item>
       </d-col>
-      <d-col :span="4" class="col-gutter">
+      <d-col :span="6" class="col-gutter">
         <d-form-item field="sjzsf" label="实际总水费">
           <d-input
             width="200px"
@@ -137,12 +138,13 @@
           ></d-input>
         </d-form-item>
       </d-col>
-      <d-col :span="4" class="col-gutter">
-        <d-form-item field="ce" label="差额">
+    </d-row>
+    <d-row :gutter="{xs: 10, sm: 40}">
+      <d-col :span="6" class="col-gutter">
+        <d-form-item field="threeAvg" label="408平均水费">
           <d-input
             width="200px"
-            v-model="formModel.ce"
-            placeholder="请输入"
+            v-model="formModel.threeAvg"
             disabled
           ></d-input>
         </d-form-item>
@@ -187,6 +189,7 @@ export default defineComponent({
       /**差额 */
       ce: 0,
       rangeDatePickerPro: ["2023/02/21", date().format("yyyy-MM-dd")],
+      threeAvg: 0,
     })
 
     return {
@@ -196,27 +199,34 @@ export default defineComponent({
   methods: {
     count() {
       // 408+阁楼总水  = 本次总水表 - 上次总水表
-      this.formModel.byylzs = Number(
-        (this.formModel.byzsb - this.formModel.syzsb).toFixed(2)
+      this.formModel.byylzs = n.minus(
+        this.formModel.byzsb,
+        this.formModel.syzsb
       )
 
       // 阁楼总水 = 本次阁楼水-上次阁楼水
-      this.formModel.glys = Number(
-        (this.formModel.bygls - this.formModel.sygls).toFixed(2)
-      )
+      this.formModel.glys = n.minus(this.formModel.bygls, this.formModel.sygls)
 
       // 408水 = 408+阁楼总水 - 阁楼总水
-      this.formModel.fiveys = Number(
-        (this.formModel.byylzs - this.formModel.glys).toFixed(2)
+      this.formModel.fiveys = n.minus(
+        this.formModel.byylzs,
+        this.formModel.glys
       )
 
       /**平均水费 */
+      console.log(this.formModel.zsf, this.formModel.byylzs);
+      
       let avg = n.div(this.formModel.zsf, this.formModel.byylzs)
+      console.log(avg);
+      
       // 阁楼水费
-      this.formModel.glsf = Number((this.formModel.glys * avg).toFixed(2))
+      this.formModel.glsf = n.mul(avg, this.formModel.glys)
 
       // 408水费
-      this.formModel.fivesf = Number((this.formModel.fiveys * avg).toFixed(2))
+      this.formModel.fivesf = n.mul(avg, this.formModel.fiveys)
+
+      // 408平均水费
+      this.formModel.threeAvg = n.div(this.formModel.fivesf, 3)
 
       this.formModel.sjzsf = n.plus(this.formModel.glsf, this.formModel.fivesf)
 

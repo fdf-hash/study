@@ -73,16 +73,6 @@
 
     <d-row :gutter="{xs: 10, sm: 40}">
       <d-col :span="6" class="col-gutter">
-        <d-form-item field="glyd" label="阁楼总用电">
-          <d-input
-            width="200px"
-            v-model="formModel.glyd"
-            placeholder="请输入"
-            disabled
-          ></d-input>
-        </d-form-item>
-      </d-col>
-      <d-col :span="6" class="col-gutter">
         <d-form-item field="fiveyd" label="408总用电">
           <d-input
             width="200px"
@@ -92,6 +82,17 @@
           ></d-input>
         </d-form-item>
       </d-col>
+      <d-col :span="6" class="col-gutter">
+        <d-form-item field="glyd" label="阁楼总用电">
+          <d-input
+            width="200px"
+            v-model="formModel.glyd"
+            placeholder="请输入"
+            disabled
+          ></d-input>
+        </d-form-item>
+      </d-col>
+
       <d-col :span="6" class="col-gutter">
         <d-form-item field="byylzd" label="本次总用电">
           <d-input
@@ -107,20 +108,20 @@
     <br />
     <d-row :gutter="{xs: 10, sm: 40}">
       <d-col :span="6" class="col-gutter">
-        <d-form-item field="gldf" label="阁楼电费">
+        <d-form-item field="fivedf" label="408电费">
           <d-input
             width="200px"
-            v-model="formModel.gldf"
+            v-model="formModel.fivedf"
             placeholder="请输入"
             disabled
           ></d-input>
         </d-form-item>
       </d-col>
       <d-col :span="6" class="col-gutter">
-        <d-form-item field="fivedf" label="408电费">
+        <d-form-item field="gldf" label="阁楼电费">
           <d-input
             width="200px"
-            v-model="formModel.fivedf"
+            v-model="formModel.gldf"
             placeholder="请输入"
             disabled
           ></d-input>
@@ -147,6 +148,17 @@
         </d-form-item>
       </d-col>
     </d-row>
+    <d-row :gutter="{xs: 10, sm: 40}">
+      <d-col :span="6" class="col-gutter">
+        <d-form-item field="threeAvg" label="408平均电费">
+          <d-input
+            width="200px"
+            v-model="formModel.threeAvg"
+            disabled
+          ></d-input>
+        </d-form-item>
+      </d-col>
+    </d-row>
     <d-form-operation class="form-demo-form-operation">
       <d-button variant="solid" @click="count">计算</d-button>
     </d-form-operation>
@@ -161,13 +173,13 @@ export default defineComponent({
   setup() {
     let formModel = reactive({
       /**上次总电表 */
-      syzdb: 47971,
+      syzdb: 46043,
       /**上次阁楼电 */
-      sygld: 18205,
+      sygld: 17169,
       /**本次总电表 */
-      byzdb: 0,
+      byzdb: 47971,
       /**本次阁楼电 */
-      bygld: 0,
+      bygld: 18205,
 
       /**408+阁楼总用电 */
       byylzd: 0,
@@ -181,10 +193,11 @@ export default defineComponent({
       /**408电费 */
       fivedf: 0,
       /**收取总电费 */
-      zdf: 726,
+      zdf: 1507,
       /**实际总电费 */
       sjzdf: 0,
       rangeDatePickerPro: ["2023/10/07", date().format("yyyy-MM-dd")],
+      threeAvg: 0,
     })
 
     return {
@@ -194,29 +207,31 @@ export default defineComponent({
   methods: {
     count() {
       // 408+阁楼总用电  = 本次总电表 - 上次总电表
-      this.formModel.byylzd = Number(
-        (this.formModel.byzdb - this.formModel.syzdb).toFixed(2)
+      this.formModel.byylzd = n.minus(
+        this.formModel.byzdb,
+        this.formModel.syzdb
       )
 
       // 阁楼总用电 = 本次阁楼电-上次阁楼电
-      this.formModel.glyd = Number(
-        (this.formModel.bygld - this.formModel.sygld).toFixed(2)
-      )
+      this.formModel.glyd = n.minus(this.formModel.bygld, this.formModel.sygld)
 
       // 408用电 = 408+阁楼总用电 - 阁楼总用电
-      this.formModel.fiveyd = Number(
-        (this.formModel.byylzd - this.formModel.glyd).toFixed(2)
+      this.formModel.fiveyd = n.minus(
+        this.formModel.byylzd,
+        this.formModel.glyd
       )
 
       /**平均电费 */
       let avg = n.div(this.formModel.zdf, this.formModel.byylzd)
       // 阁楼电费
-      this.formModel.gldf = Number((this.formModel.glyd * avg).toFixed(2))
+      this.formModel.gldf = n.mul(this.formModel.glyd, avg)
 
       // 408电费
-      this.formModel.fivedf = Number((this.formModel.fiveyd * avg).toFixed(2))
+      this.formModel.fivedf = n.mul(this.formModel.fiveyd, avg)
 
-      this.formModel.sjzdf = n.plus(this.formModel.gldf,this.formModel.fivedf)
+      this.formModel.sjzdf = n.plus(this.formModel.gldf, this.formModel.fivedf)
+
+      this.formModel.threeAvg = n.div(this.formModel.fivedf, 3)
     },
     filterTime(val: any) {
       return val ? date(val).format("yyyy-MM-dd") : ""
