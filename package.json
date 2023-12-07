@@ -22,7 +22,7 @@
     "vue": "^3.3.4",
     "vue-devui": "1.5.4-alpha.0",
     "vue-router": "^4.2.4",
-    "cat-kit": "2.4.0",
+    "cat-kit": "^2.4.8",
     "jsencrypt":"3.3.2",
     "crypto-js":"~4.2.0"
   },
