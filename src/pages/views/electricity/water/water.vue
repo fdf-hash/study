@@ -124,7 +124,6 @@
             width="200px"
             v-model="formModel.zsf"
             placeholder="请输入"
-            disabled
           ></d-input>
         </d-form-item>
       </d-col>

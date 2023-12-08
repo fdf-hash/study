@@ -133,7 +133,6 @@
             width="200px"
             v-model="formModel.zdf"
             placeholder="请输入"
-            disabled
           ></d-input>
         </d-form-item>
       </d-col>
@@ -173,13 +172,13 @@ export default defineComponent({
   setup() {
     let formModel = reactive({
       /**上次总电表 */
-      syzdb: 46043,
+      syzdb: 47971,
       /**上次阁楼电 */
-      sygld: 17169,
+      sygld: 18205,
       /**本次总电表 */
-      byzdb: 47971,
+      byzdb: 48929,
       /**本次阁楼电 */
-      bygld: 18205,
+      bygld: 18735,
 
       /**408+阁楼总用电 */
       byylzd: 0,
@@ -193,7 +192,7 @@ export default defineComponent({
       /**408电费 */
       fivedf: 0,
       /**收取总电费 */
-      zdf: 1507,
+      zdf: 726,
       /**实际总电费 */
       sjzdf: 0,
       rangeDatePickerPro: ["2023/10/07", date().format("yyyy-MM-dd")],
