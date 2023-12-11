@@ -1,3 +1,7 @@
+# [使用npm报错-需翻墙](https://chat.openai.com/share/925375cc-7d01-4f4c-93cd-f7365d9790c4)
+
+
+
 # 项目使用 Vue 3 + TypeScript + Vite + Vue DevUI 开发
 
 ##  [Vue 3](https://cn.vuejs.org/guide/introduction.html) + [TypeScript](https://www.typescriptlang.org/zh/docs/handbook/typescript-in-5-minutes.html) + [Vite](https://cn.vitejs.dev/guide/) + [Vue DevUI](https://vue-devui.github.io/quick-start/)
