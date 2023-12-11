@@ -29,6 +29,9 @@ importers:
       layout:
         specifier: workspace:*
         version: link:src/layout
+      moment:
+        specifier: ^2.29.4
+        version: registry.npmmirror.com/moment@2.29.4
       pages:
         specifier: workspace:*
         version: link:src/pages/views
@@ -56,6 +59,9 @@ importers:
       vue-router:
         specifier: ^4.2.4
         version: registry.npmmirror.com/vue-router@4.2.4(vue@3.3.4)
+      workspace-name:
+        specifier: ^0.0.0
+        version: registry.npmmirror.com/workspace-name@0.0.0
     devDependencies:
       '@types/node':
         specifier: ^18.11.19
@@ -100,6 +106,135 @@ importers:
   src/unit: {}
 
 packages:
+
+  registry.npmmirror.com/@angular/animations@13.3.12(@angular/core@13.3.12):
+    resolution: {integrity: sha512-dc2JDokKJuuNxzzZa9FvuQU71kYC/e0xCLjGxEgX48sGKwajHRGBuzYFb8EmvLeA24SshYGmrxN0vGG9GhLK6g==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@angular/animations/-/animations-13.3.12.tgz}
+    id: registry.npmmirror.com/@angular/animations/13.3.12
+    name: '@angular/animations'
+    version: 13.3.12
+    engines: {node: ^12.20.0 || ^14.15.0 || >=16.10.0}
+    peerDependencies:
+      '@angular/core': 13.3.12
+    dependencies:
+      '@angular/core': registry.npmmirror.com/@angular/core@13.3.12(rxjs@7.5.7)(zone.js@0.11.8)
+      tslib: registry.npmmirror.com/tslib@2.6.2
+    dev: false
+
+  registry.npmmirror.com/@angular/common@13.3.12(@angular/core@13.3.12)(rxjs@7.5.7):
+    resolution: {integrity: sha512-Nk4zNKfda92aFe+cucHRv2keyryR7C1ZnsurwZW9WZSobpY3z2tTT81F+yy35lGoMt5BDBAIpfh1b4j9Ue/vMg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@angular/common/-/common-13.3.12.tgz}
+    id: registry.npmmirror.com/@angular/common/13.3.12
+    name: '@angular/common'
+    version: 13.3.12
+    engines: {node: ^12.20.0 || ^14.15.0 || >=16.10.0}
+    peerDependencies:
+      '@angular/core': 13.3.12
+      rxjs: ^6.5.3 || ^7.4.0
+    dependencies:
+      '@angular/core': registry.npmmirror.com/@angular/core@13.3.12(rxjs@7.5.7)(zone.js@0.11.8)
+      rxjs: registry.npmmirror.com/rxjs@7.5.7
+      tslib: registry.npmmirror.com/tslib@2.6.2
+    dev: false
+
+  registry.npmmirror.com/@angular/compiler@13.3.12:
+    resolution: {integrity: sha512-F5vJYrjbNvEWoVz9J/CqiT3Iod6g9bV0dGI5EeURcW4yHXHZ12ioQpfU3+bE7qXcTlnofbdDhK8cGxGx01SzBA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@angular/compiler/-/compiler-13.3.12.tgz}
+    name: '@angular/compiler'
+    version: 13.3.12
+    engines: {node: ^12.20.0 || ^14.15.0 || >=16.10.0}
+    dependencies:
+      tslib: registry.npmmirror.com/tslib@2.6.2
+    dev: false
+
+  registry.npmmirror.com/@angular/core@13.3.12(rxjs@7.5.7)(zone.js@0.11.8):
+    resolution: {integrity: sha512-jx0YC+NbPMbxGr5bXECkCEQv2RdVxR8AJNnabkPk8ZjwCpDzROrbELwwS1kunrZUhffcD15IhWGBvf1EGHAYDw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@angular/core/-/core-13.3.12.tgz}
+    id: registry.npmmirror.com/@angular/core/13.3.12
+    name: '@angular/core'
+    version: 13.3.12
+    engines: {node: ^12.20.0 || ^14.15.0 || >=16.10.0}
+    peerDependencies:
+      rxjs: ^6.5.3 || ^7.4.0
+      zone.js: ~0.11.4
+    dependencies:
+      rxjs: registry.npmmirror.com/rxjs@7.5.7
+      tslib: registry.npmmirror.com/tslib@2.6.2
+      zone.js: registry.npmmirror.com/zone.js@0.11.8
+    dev: false
+
+  registry.npmmirror.com/@angular/forms@13.3.12(@angular/common@13.3.12)(@angular/core@13.3.12)(@angular/platform-browser@13.3.12)(rxjs@7.5.7):
+    resolution: {integrity: sha512-auow1TKZx44ha1ia8Jwg2xp2Q7BbpShG5Ft8tewL3T44aTmJY7svWOE/m+DkZ/SXHmTFnbZFobGU5aEfe0+pNw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@angular/forms/-/forms-13.3.12.tgz}
+    id: registry.npmmirror.com/@angular/forms/13.3.12
+    name: '@angular/forms'
+    version: 13.3.12
+    engines: {node: ^12.20.0 || ^14.15.0 || >=16.10.0}
+    peerDependencies:
+      '@angular/common': 13.3.12
+      '@angular/core': 13.3.12
+      '@angular/platform-browser': 13.3.12
+      rxjs: ^6.5.3 || ^7.4.0
+    dependencies:
+      '@angular/common': registry.npmmirror.com/@angular/common@13.3.12(@angular/core@13.3.12)(rxjs@7.5.7)
+      '@angular/core': registry.npmmirror.com/@angular/core@13.3.12(rxjs@7.5.7)(zone.js@0.11.8)
+      '@angular/platform-browser': registry.npmmirror.com/@angular/platform-browser@13.3.12(@angular/animations@13.3.12)(@angular/common@13.3.12)(@angular/core@13.3.12)
+      rxjs: registry.npmmirror.com/rxjs@7.5.7
+      tslib: registry.npmmirror.com/tslib@2.6.2
+    dev: false
+
+  registry.npmmirror.com/@angular/platform-browser-dynamic@13.3.12(@angular/common@13.3.12)(@angular/compiler@13.3.12)(@angular/core@13.3.12)(@angular/platform-browser@13.3.12):
+    resolution: {integrity: sha512-/hBggov0PxK/KNJqIu3MVc5k8f0iDbygDP8Z1k/J0FcllOSRdO4LsQd1fsCfGfwIUf0YWGyD7KraSGpBBiWlFg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@angular/platform-browser-dynamic/-/platform-browser-dynamic-13.3.12.tgz}
+    id: registry.npmmirror.com/@angular/platform-browser-dynamic/13.3.12
+    name: '@angular/platform-browser-dynamic'
+    version: 13.3.12
+    engines: {node: ^12.20.0 || ^14.15.0 || >=16.10.0}
+    peerDependencies:
+      '@angular/common': 13.3.12
+      '@angular/compiler': 13.3.12
+      '@angular/core': 13.3.12
+      '@angular/platform-browser': 13.3.12
+    dependencies:
+      '@angular/common': registry.npmmirror.com/@angular/common@13.3.12(@angular/core@13.3.12)(rxjs@7.5.7)
+      '@angular/compiler': registry.npmmirror.com/@angular/compiler@13.3.12
+      '@angular/core': registry.npmmirror.com/@angular/core@13.3.12(rxjs@7.5.7)(zone.js@0.11.8)
+      '@angular/platform-browser': registry.npmmirror.com/@angular/platform-browser@13.3.12(@angular/animations@13.3.12)(@angular/common@13.3.12)(@angular/core@13.3.12)
+      tslib: registry.npmmirror.com/tslib@2.6.2
+    dev: false
+
+  registry.npmmirror.com/@angular/platform-browser@13.3.12(@angular/animations@13.3.12)(@angular/common@13.3.12)(@angular/core@13.3.12):
+    resolution: {integrity: sha512-sfhQqU4xjTJCjkH62TQeH5/gkay/KzvNDF95J6NHi/Q6p2dbtzZdXuLJKR/sHxtF2kc505z5v9RNm6XMSXM1KA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@angular/platform-browser/-/platform-browser-13.3.12.tgz}
+    id: registry.npmmirror.com/@angular/platform-browser/13.3.12
+    name: '@angular/platform-browser'
+    version: 13.3.12
+    engines: {node: ^12.20.0 || ^14.15.0 || >=16.10.0}
+    peerDependencies:
+      '@angular/animations': 13.3.12
+      '@angular/common': 13.3.12
+      '@angular/core': 13.3.12
+    peerDependenciesMeta:
+      '@angular/animations':
+        optional: true
+    dependencies:
+      '@angular/animations': registry.npmmirror.com/@angular/animations@13.3.12(@angular/core@13.3.12)
+      '@angular/common': registry.npmmirror.com/@angular/common@13.3.12(@angular/core@13.3.12)(rxjs@7.5.7)
+      '@angular/core': registry.npmmirror.com/@angular/core@13.3.12(rxjs@7.5.7)(zone.js@0.11.8)
+      tslib: registry.npmmirror.com/tslib@2.6.2
+    dev: false
+
+  registry.npmmirror.com/@angular/router@13.3.12(@angular/common@13.3.12)(@angular/core@13.3.12)(@angular/platform-browser@13.3.12)(rxjs@7.5.7):
+    resolution: {integrity: sha512-X+TAxTAlqUd2gPm6drFBGVzQsbQWM5wmZ8S5D5i+86x7Ku0v2CUFICT6AUPSl9+FTPiexlL4FdmvQV2CnGTSUw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@angular/router/-/router-13.3.12.tgz}
+    id: registry.npmmirror.com/@angular/router/13.3.12
+    name: '@angular/router'
+    version: 13.3.12
+    engines: {node: ^12.20.0 || ^14.15.0 || >=16.10.0}
+    peerDependencies:
+      '@angular/common': 13.3.12
+      '@angular/core': 13.3.12
+      '@angular/platform-browser': 13.3.12
+      rxjs: ^6.5.3 || ^7.4.0
+    dependencies:
+      '@angular/common': registry.npmmirror.com/@angular/common@13.3.12(@angular/core@13.3.12)(rxjs@7.5.7)
+      '@angular/core': registry.npmmirror.com/@angular/core@13.3.12(rxjs@7.5.7)(zone.js@0.11.8)
+      '@angular/platform-browser': registry.npmmirror.com/@angular/platform-browser@13.3.12(@angular/animations@13.3.12)(@angular/common@13.3.12)(@angular/core@13.3.12)
+      rxjs: registry.npmmirror.com/rxjs@7.5.7
+      tslib: registry.npmmirror.com/tslib@2.6.2
+    dev: false
 
   registry.npmmirror.com/@antfu/utils@0.7.5:
     resolution: {integrity: sha512-dlR6LdS+0SzOAPx/TPRhnoi7hE251OVeT2Snw0RguNbBSbjUHdWr0l3vcUUDg26rEysT89kCbtw1lVorBXLLCg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@antfu/utils/-/utils-0.7.5.tgz}
@@ -1399,6 +1534,12 @@ packages:
     version: 3.0.1
     dev: false
 
+  registry.npmmirror.com/moment@2.29.4:
+    resolution: {integrity: sha512-5LC9SOxjSc2HF6vO2CyuTDNivEdoz2IvyJJGj6X8DJ0eFyfszE0QiEd+iXmBvUP3WHxSjFH/vIsA0EN00cgr8w==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/moment/-/moment-2.29.4.tgz}
+    name: moment
+    version: 2.29.4
+    dev: false
+
   registry.npmmirror.com/monaco-editor@0.34.0:
     resolution: {integrity: sha512-VF+S5zG8wxfinLKLrWcl4WUizMx+LeJrG4PM/M78OhcwocpV0jiyhX/pG6Q9jIOhrb/ckYi6nHnaR5OojlOZCQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/monaco-editor/-/monaco-editor-0.34.0.tgz}
     name: monaco-editor
@@ -1537,6 +1678,14 @@ packages:
       queue-microtask: registry.npmmirror.com/queue-microtask@1.2.3
     dev: true
 
+  registry.npmmirror.com/rxjs@7.5.7:
+    resolution: {integrity: sha512-z9MzKh/UcOqB3i20H6rtrlaE/CgjLOvheWK/9ILrbhROGTweAi1BaFsTT9FbwZi5Trr1qNRs+MXkhmR06awzQA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/rxjs/-/rxjs-7.5.7.tgz}
+    name: rxjs
+    version: 7.5.7
+    dependencies:
+      tslib: registry.npmmirror.com/tslib@2.6.2
+    dev: false
+
   registry.npmmirror.com/sass@1.63.6:
     resolution: {integrity: sha512-MJuxGMHzaOW7ipp+1KdELtqKbfAWbH7OLIdoSMnVe3EXPMTmxTmlaZDCTsgIpPCs3w99lLo9/zDKkOrJuT5byw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/sass/-/sass-1.63.6.tgz}
     name: sass
@@ -1613,6 +1762,12 @@ packages:
     dependencies:
       '@types/node': registry.npmmirror.com/@types/node@18.11.19
     dev: true
+
+  registry.npmmirror.com/tslib@2.6.2:
+    resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/tslib/-/tslib-2.6.2.tgz}
+    name: tslib
+    version: 2.6.2
+    dev: false
 
   registry.npmmirror.com/tsx@3.12.7:
     resolution: {integrity: sha512-C2Ip+jPmqKd1GWVQDvz/Eyc6QJbGfE7NrR3fx5BpEHMZsEHoIxHL1j+lKdGobr8ovEyqeNkPLSKp6SCSOt7gmw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/tsx/-/tsx-3.12.7.tgz}
@@ -1830,8 +1985,34 @@ packages:
     version: 0.5.0
     dev: true
 
+  registry.npmmirror.com/workspace-name@0.0.0:
+    resolution: {integrity: sha512-fKGVdkTXLB9IwsV48s1ecUyxIjSYNaKLYSxcv6O7cXpw9D2r8PHVs9JDq1KTDhCt25Q7WPIrRd8JWgWJ6PrHoQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/workspace-name/-/workspace-name-0.0.0.tgz}
+    name: workspace-name
+    version: 0.0.0
+    dependencies:
+      '@angular/animations': registry.npmmirror.com/@angular/animations@13.3.12(@angular/core@13.3.12)
+      '@angular/common': registry.npmmirror.com/@angular/common@13.3.12(@angular/core@13.3.12)(rxjs@7.5.7)
+      '@angular/compiler': registry.npmmirror.com/@angular/compiler@13.3.12
+      '@angular/core': registry.npmmirror.com/@angular/core@13.3.12(rxjs@7.5.7)(zone.js@0.11.8)
+      '@angular/forms': registry.npmmirror.com/@angular/forms@13.3.12(@angular/common@13.3.12)(@angular/core@13.3.12)(@angular/platform-browser@13.3.12)(rxjs@7.5.7)
+      '@angular/platform-browser': registry.npmmirror.com/@angular/platform-browser@13.3.12(@angular/animations@13.3.12)(@angular/common@13.3.12)(@angular/core@13.3.12)
+      '@angular/platform-browser-dynamic': registry.npmmirror.com/@angular/platform-browser-dynamic@13.3.12(@angular/common@13.3.12)(@angular/compiler@13.3.12)(@angular/core@13.3.12)(@angular/platform-browser@13.3.12)
+      '@angular/router': registry.npmmirror.com/@angular/router@13.3.12(@angular/common@13.3.12)(@angular/core@13.3.12)(@angular/platform-browser@13.3.12)(rxjs@7.5.7)
+      rxjs: registry.npmmirror.com/rxjs@7.5.7
+      tslib: registry.npmmirror.com/tslib@2.6.2
+      zone.js: registry.npmmirror.com/zone.js@0.11.8
+    dev: false
+
   registry.npmmirror.com/yallist@4.0.0:
     resolution: {integrity: sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/yallist/-/yallist-4.0.0.tgz}
     name: yallist
     version: 4.0.0
     dev: true
+
+  registry.npmmirror.com/zone.js@0.11.8:
+    resolution: {integrity: sha512-82bctBg2hKcEJ21humWIkXRlLBBmrc3nN7DFh5LGGhcyycO2S7FN8NmdvlcKaGFDNVL4/9kFLmwmInTavdJERA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/zone.js/-/zone.js-0.11.8.tgz}
+    name: zone.js
+    version: 0.11.8
+    dependencies:
+      tslib: registry.npmmirror.com/tslib@2.6.2
+    dev: false
