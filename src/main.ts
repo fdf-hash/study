@@ -6,7 +6,6 @@ import DevUI from 'vue-devui';
 import 'styles/index.scss'
 import 'vue-devui/style.css';
 import '@devui-design/icons/icomoon/devui-icon.css';
-
 // 创建app
 const app = createApp({
   render: () => h(RouterView),

@@ -8,7 +8,7 @@
             v-if="item.children != undefined && item.redirect"
           >
             <template #icon>
-              <i class="icon-system"></i>
+              <i class="icon-add-sibling-node"></i>
             </template>
             {{ item.meta?.title }}
           </d-menu-item>
@@ -19,7 +19,7 @@
             v-if="item.children != undefined && item.redirect == undefined"
           >
             <template #icon>
-              <i class="icon-system"></i>
+              <i class="icon-add-sibling-node"></i>
             </template>
             <d-menu-item
               v-for="children in item.children"
@@ -27,7 +27,7 @@
             >
             
               <template #icon>
-                <i class="icon-system"></i>
+                <i class="icon-classroom-post-results-large"></i>
               </template>
               {{ children.meta?.title }}
             </d-menu-item>

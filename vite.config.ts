@@ -12,7 +12,7 @@ export default defineConfig((context) => {
       }),
     ],
     server: {
-      port: 3000,
+      port: 9782,
       open: true,
       host: true, // 导出
     }

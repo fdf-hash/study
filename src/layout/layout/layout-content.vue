@@ -19,6 +19,8 @@
     height: 100%;
     background: #fff;
     overflow: auto;
+    box-shadow: 0 2px 5px 0 #dcdfe6;
+    
   }
 
   .layout-view::-webkit-scrollbar {
@@ -31,14 +33,14 @@
   }
 
   .layout-view::-webkit-scrollbar-thumb {
-    background-color: rgb(211, 211, 211,0.7);
+    background-color: rgb(211, 211, 211, 0.7);
     /* 滑块颜色 */
     border-radius: 10px;
     /* 滑块边角的弧度 */
   }
 
   .layout-view::-webkit-scrollbar-thumb:hover {
-    background-color: rgb(211, 211, 211,0.7);
+    background-color: rgb(211, 211, 211, 0.7);
     /* 悬停时滑块颜色 */
   }
 }
