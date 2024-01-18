@@ -1,7 +1,6 @@
 /**
  * 获取src/pages目录下所有.vue中文件以"<!-- <router "开头，以"> -->"结尾的信息
  */
-
 import { log } from "console";
 
 const fs = require('fs');
@@ -30,7 +29,6 @@ let numVue = 0
 /**
  * 结果
  */
-
 let routerData: any = []
 
 export default function readVueFile() {
@@ -85,11 +83,12 @@ export default function readVueFile() {
             });
         }
 
-
         function filterGoContent(lines: any) {
-
+            // 遍历所有文件内容
             for (const line of lines) {
+                // 遍历每行内容
                 for (const child of line.content) {
+                    // 匹配注释格式
                     const match = child.match(commentRegex);
                     if (match) {
                         let obj = {
@@ -98,6 +97,7 @@ export default function readVueFile() {
                         }
                         routerData.push(obj)
                         resolve(routerData)
+                        log(routerData)
                         // const extractedContent = match[1].trim();
                         // console.log('拿到的信息', extractedContent);
                     }
@@ -107,5 +107,4 @@ export default function readVueFile() {
 
         readFile(directoryPath);
     })
-
 }
